@@ -1,0 +1,25 @@
+# KotoClick (Котоклик) — files that should not go into the repository
+
+# Python virtual environments (run.bat / build.bat create .venv)
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Build output (build.bat puts KotoClick.exe in the project folder;
+# the .exe is published in GitHub Releases, not in the repository)
+KotoClick.exe
+Kotoklik.exe
+*.spec
+build/
+dist/
+
+# User data created next to the app: recorded macros and custom sounds
+macros/
+sounds_custom/
+
+# Temporary and backup files (atomic saves, old autosave_macro.json.bak)
+*.tmp
+*.bak

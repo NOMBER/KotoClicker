@@ -1,0 +1,14 @@
+# KotoClick: libraries needed to run it. Versions are pinned exactly: everything was tested with them.
+# All packages come from the official PyPI index (pypi.org) and are installed with pip.
+# Requires Python 3.10 or newer (PySide6 6.12 does not support older versions).
+#
+# UI: Qt for Python (The Qt Company / Qt for Python Team), only the essential Qt modules
+PySide6-Essentials==6.12.0
+# MP3/OGG/M4A sounds (QtMultimedia + FFmpeg). The package is big, but the app also
+# works without it: custom sounds are then WAV only.
+PySide6-Addons==6.12.0
+# Hotkeys, clicks and mouse recording (author: Moses Palmér, github.com/moses-palmer/pynput)
+pynput==1.8.2
+#
+# Even stricter: requirements-lock.txt has the same versions + the SHA-256 of every file
+# (python -m pip install --require-hashes -r requirements-lock.txt)

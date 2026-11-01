@@ -1,0 +1,4 @@
+# For building KotoClick.exe (build.bat): the app's libraries + PyInstaller.
+-r requirements.txt
+# The .exe packager (pyinstaller.org, github.com/pyinstaller/pyinstaller)
+pyinstaller==6.22.3
