@@ -6,7 +6,7 @@
 
 ## Download
 
-**[⬇ Download KotoClick.exe](https://github.com/NOMBER/KotoClick/releases/latest/download/KotoClick.exe)** — ready-to-use program for Windows, single file, no Python required. All versions are on the [Releases](https://github.com/NOMBER/KotoClick/releases) page.
+**[⬇ Download KotoClick.exe](https://github.com/NOMBER/KotoClick/releases)** — ready-to-use program for Windows, single file, no Python required.
 
 **File verification.** The SHA-256 checksum is listed in the release description. Open PowerShell in the folder with the downloaded file and compare:
 
@@ -112,12 +112,18 @@ tools/                  — helper scripts (sounds, images, layout check)
 
 ## License
 
-[PLACEHOLDER — choose a license and add a `LICENSE` file]
+This project is distributed under the GPL v3 license.
+What this means for users:
+- Authorship: Attribution and license notices must be preserved.
+- Freedom: The code may be used, modified, and distributed free of charge.
+- Copyleft: Any modifications and projects based on this code must also be made available under the GPL v3.
 
 The Nunito font in `assets/fonts/` is distributed under the OFL license; the license text is next to it (`FONT_LICENSE.txt`).
 
 ## Contacts
 
 - Telegram bot for downloading videos: [@DownGrabBot](https://t.me/DownGrabBot?start=KotoClick)
+
+- [kotoclick.github.io](https://kotoclick.github.io)
 
 - [NomberProjects](https://NomberProjects.github.io)
