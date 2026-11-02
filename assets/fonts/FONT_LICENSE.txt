@@ -1,5 +1,5 @@
-Шрифт Nunito (Nunito-VariableFont_wght.ttf)
-Авторы: Vernon Adams, Cyreal, Jacques Le Bailly и др. — Google Fonts.
-Лицензия: SIL Open Font License 1.1 — бесплатный, можно распространять вместе с программой.
-Текст лицензии: https://openfontlicense.org/open-font-license-official-text/
-Источник: https://fonts.google.com/specimen/Nunito
+Nunito font (Nunito-VariableFont_wght.ttf)
+Authors: Vernon Adams, Cyreal, Jacques Le Bailly, et al. — Google Fonts.
+License: SIL Open Font License 1.1 — free to use; may be distributed with software.
+License text: https://openfontlicense.org/open-font-license-official-text/
+Source: https://fonts.google.com/specimen/Nunito
