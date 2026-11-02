@@ -14,12 +14,12 @@ os.environ["KOTOCLICK_CONFIG_DIR"] = tempfile.mkdtemp()
 os.environ["KOTOCLICK_SOUND"] = "off"
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from kotoclick import promo  # noqa: E402
-from kotoclick.library import MacroLibrary, safe_name  # noqa: E402
-from kotoclick.macro import Macro, Step  # noqa: E402
-from kotoclick.reactions import ClickRate, HatWiggle, Mood  # noqa: E402
-from kotoclick.settings import Settings  # noqa: E402
-from kotoclick.sounds import EVENTS, SoundBoard, check_wav, default_path, scaled_wav  # noqa: E402
+from app import promo  # noqa: E402
+from app.library import MacroLibrary, safe_name  # noqa: E402
+from app.macro import Macro, Step  # noqa: E402
+from app.reactions import ClickRate, HatWiggle, Mood  # noqa: E402
+from app.settings import Settings  # noqa: E402
+from app.sounds import EVENTS, SoundBoard, check_wav, default_path, scaled_wav  # noqa: E402
 
 
 def run_mood(mood, cps, start, seconds, step=0.05, allowed=True):
@@ -289,9 +289,9 @@ class WindowTests(unittest.TestCase):
         cls.app = app_main.create_app([])
 
     def setUp(self):
-        from kotoclick.engine import Engine
-        from kotoclick.hotkeys import HotkeyListener
-        from kotoclick.ui.main_window import MainWindow
+        from app.engine import Engine
+        from app.hotkeys import HotkeyListener
+        from app.ui.main_window import MainWindow
         from test_core import FakeMouse
         os.environ["KOTOCLICK_CONFIG_DIR"] = tempfile.mkdtemp()
         self.fake = FakeBackend()

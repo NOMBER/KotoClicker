@@ -5,12 +5,12 @@ from PySide6.QtCore import Qt
 from PySide6.QtGui import QFont, QFontDatabase, QIcon
 from PySide6.QtWidgets import QApplication
 
-from kotoclick import paths
-from kotoclick.engine import Engine
-from kotoclick.hotkeys import HotkeyListener
-from kotoclick.settings import Settings
-from kotoclick.ui import theme
-from kotoclick.ui.main_window import MainWindow
+from app import paths
+from app.engine import Engine
+from app.hotkeys import HotkeyListener
+from app.settings import Settings
+from app.ui import theme
+from app.ui.main_window import MainWindow
 
 
 def dark_title_bar(window):

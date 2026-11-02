@@ -10,11 +10,11 @@ os.environ["KOTOCLICK_SOUND"] = "off"
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 import main as app_main  # noqa: E402
-from kotoclick.engine import Engine  # noqa: E402
-from kotoclick.hotkeys import HotkeyListener  # noqa: E402
-from kotoclick.macro import Macro, Step  # noqa: E402
-from kotoclick.settings import Settings  # noqa: E402
-from kotoclick.ui.main_window import MainWindow  # noqa: E402
+from app.engine import Engine  # noqa: E402
+from app.hotkeys import HotkeyListener  # noqa: E402
+from app.macro import Macro, Step  # noqa: E402
+from app.settings import Settings  # noqa: E402
+from app.ui.main_window import MainWindow  # noqa: E402
 from test_core import FakeMouse, wait_until  # noqa: E402
 
 APP = app_main.create_app([])

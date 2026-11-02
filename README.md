@@ -41,7 +41,7 @@ If you don’t want to run someone else’s `.exe` — run the program from sour
 
 **Russian and English**
 - RU | EN switcher in the window; the language changes immediately, without restart.
-- Cat phrases are in `kotoclick/phrases.py` as a dictionary `PHRASES[situation]["ru" | "en"]`. English phrases are not a literal translation, but the same mood in English. They can be edited and extended.
+- Cat phrases are in `app/phrases.py` as a dictionary `PHRASES[situation]["ru" | "en"]`. English phrases are not a literal translation, but the same mood in English. They can be edited and extended.
 
 **Sounds**
 - Countdown “beep-beep-beep” before recording, meow on recording start, recording end sound, macro start sound, and quiet ticks during recording.
@@ -94,7 +94,7 @@ Run `build.bat`: it will create `.venv`, install dependencies and PyInstaller (v
 main.py                 — entry point
 run.bat / build.bat     — run from source / build .exe
 requirements.txt        — dependencies
-kotoclick/
+app/
   engine.py             — auto-click, replay and recording
   hotkeys.py            — global hotkeys
   macro.py, library.py  — macro format and library in the macros folder

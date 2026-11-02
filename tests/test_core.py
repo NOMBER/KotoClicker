@@ -13,10 +13,10 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 from PySide6.QtWidgets import QApplication  # noqa: E402
 
-from kotoclick.engine import Engine  # noqa: E402
-from kotoclick.hotkeys import HotkeyListener, key_to_name, pretty_key  # noqa: E402
-from kotoclick.macro import Macro, Step, compress_moves  # noqa: E402
-from kotoclick.settings import Settings  # noqa: E402
+from app.engine import Engine  # noqa: E402
+from app.hotkeys import HotkeyListener, key_to_name, pretty_key  # noqa: E402
+from app.macro import Macro, Step, compress_moves  # noqa: E402
+from app.settings import Settings  # noqa: E402
 
 APP = QApplication.instance() or QApplication([])
 
@@ -265,7 +265,7 @@ class EngineTests(unittest.TestCase):
 
 class HotkeyLostReleaseTest(unittest.TestCase):
     def test_lost_release_recovers(self):
-        import kotoclick.hotkeys as hk_mod
+        import app.hotkeys as hk_mod
         hk = HotkeyListener()
         got = []
         hk.hotkeyPressed.connect(got.append)

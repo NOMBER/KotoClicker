@@ -22,9 +22,9 @@ from PySide6.QtWidgets import (QAbstractButton, QAbstractSpinBox, QLabel,  # noq
                                QLineEdit)
 
 import main as app_main  # noqa: E402
-from kotoclick.hotkeys import pretty_key  # noqa: E402
-from kotoclick.i18n import tr  # noqa: E402
-from kotoclick.macro import Step  # noqa: E402
+from app.hotkeys import pretty_key  # noqa: E402
+from app.i18n import tr  # noqa: E402
+from app.macro import Step  # noqa: E402
 
 SLACK = 1
 
@@ -70,8 +70,8 @@ def problems_in(win, where):
 
 def phrase_samples(lang):
     """All cat phrases with the longest placeholders (big numbers, a long key name)."""
-    from kotoclick import i18n
-    from kotoclick.phrases import PHRASES, fields
+    from app import i18n
+    from app.phrases import PHRASES, fields
     i18n.set_language(lang)
     big = "1 000 000" if lang == "ru" else "1,000,000"
     longest_key = max((pretty_key(k) for k in ("caps_lock", "shift_r", "ctrl_r", "alt_r", "page_down",
@@ -111,7 +111,7 @@ def check_phrases(win, app):
 
 def check_step_dialogs(win, app):
     """The "add / edit step" dialog: every step type, both languages, nothing clipped."""
-    from kotoclick.ui.step_dialog import StepDialog
+    from app.ui.step_dialog import StepDialog
     out = []
     samples = [Step("click", 1920, 1080, "middle", 99999, double=True), Step("move", 900, 470),
                Step("wait", delay_ms=3_600_000), Step("mouse_down", 1920, 1080, "middle", 99999),
@@ -142,7 +142,7 @@ def run():
     win.show()
     app.processEvents()
     problems = []
-    from kotoclick.ui.main_window import WIN_W, WIN_H
+    from app.ui.main_window import WIN_W, WIN_H
     if (win.width(), win.height()) != (WIN_W, WIN_H) or win.minimumSize() != win.maximumSize():
         problems.append(f"window is not fixed: {win.size()}")
     if win.centralWidget().layout().minimumSize().height() > WIN_H:

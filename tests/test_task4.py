@@ -15,11 +15,11 @@ os.environ["KOTOCLICK_CONFIG_DIR"] = tempfile.mkdtemp()
 os.environ["KOTOCLICK_SOUND"] = "off"
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from kotoclick import i18n, phrases, sounds  # noqa: E402
-from kotoclick.phrases import (PHRASES, PhrasePicker, fields, greeting_situation,  # noqa: E402
+from app import i18n, phrases, sounds  # noqa: E402
+from app.phrases import (PHRASES, PhrasePicker, fields, greeting_situation,  # noqa: E402
                               milestone_reached)
-from kotoclick.settings import Settings  # noqa: E402
-from kotoclick.sounds import SoundBoard, check_sound, default_path  # noqa: E402
+from app.settings import Settings  # noqa: E402
+from app.sounds import SoundBoard, check_sound, default_path  # noqa: E402
 
 TMP = Path(tempfile.mkdtemp())
 
@@ -252,9 +252,9 @@ class ChattyWindowTests(unittest.TestCase):
         cls.app = app_main.create_app([])
 
     def setUp(self):
-        from kotoclick.engine import Engine
-        from kotoclick.hotkeys import HotkeyListener
-        from kotoclick.ui.main_window import MainWindow
+        from app.engine import Engine
+        from app.hotkeys import HotkeyListener
+        from app.ui.main_window import MainWindow
         from test_core import FakeMouse
         os.environ["KOTOCLICK_CONFIG_DIR"] = tempfile.mkdtemp()
         self.wav, self.media = FakeBackend(), FakeBackend()
@@ -330,7 +330,7 @@ class ChattyWindowTests(unittest.TestCase):
         self.assertTrue(self.said("clicking"))
 
     def test_macro_loops_and_language(self):
-        from kotoclick.macro import Step
+        from app.macro import Step
         w = self.win
         self.engine.start_playback = lambda *a, **kw: True
         w.macro.steps = [Step("click", 1, 1)]

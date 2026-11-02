@@ -18,10 +18,10 @@ os.environ["KOTOCLICK_CONFIG_DIR"] = tempfile.mkdtemp()
 os.environ["KOTOCLICK_SOUND"] = "off"
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from kotoclick import i18n, paths, sound_trim, sounds  # noqa: E402
-from kotoclick.promo import EGG_COOLDOWN, EasterEgg, PromoScheduler  # noqa: E402
-from kotoclick.settings import HOTKEY_DEFAULTS, Settings  # noqa: E402
-from kotoclick.typography import NBSP, nbsp, tooltip_html  # noqa: E402
+from app import i18n, paths, sound_trim, sounds  # noqa: E402
+from app.promo import EGG_COOLDOWN, EasterEgg, PromoScheduler  # noqa: E402
+from app.settings import HOTKEY_DEFAULTS, Settings  # noqa: E402
+from app.typography import NBSP, nbsp, tooltip_html  # noqa: E402
 
 TMP = Path(tempfile.mkdtemp())
 
@@ -225,9 +225,9 @@ class WindowTests(unittest.TestCase):
         cls.app = app_main.create_app([])
 
     def make(self, **kw):
-        from kotoclick.engine import Engine
-        from kotoclick.hotkeys import HotkeyListener
-        from kotoclick.ui.main_window import MainWindow
+        from app.engine import Engine
+        from app.hotkeys import HotkeyListener
+        from app.ui.main_window import MainWindow
         from test_core import FakeMouse
         os.environ["KOTOCLICK_CONFIG_DIR"] = tempfile.mkdtemp()
         self.wav, self.media = FakeBackend(), FakeBackend()
@@ -256,7 +256,7 @@ class WindowTests(unittest.TestCase):
         shown = []
         w.show_promo = lambda: shown.append(1)
         clock = [5000.0]
-        with mock.patch("kotoclick.ui.main_window.time.monotonic", side_effect=lambda: clock[0]):
+        with mock.patch("app.ui.main_window.time.monotonic", side_effect=lambda: clock[0]):
             for _ in range(10):
                 clock[0] += 0.4
                 w._on_cat_clicked()
@@ -395,7 +395,7 @@ class WindowTests(unittest.TestCase):
         self.assertEqual(w._offer_trim("tick", str(bad)), str(bad))
 
     def test_trim_dialog_widgets(self):
-        from kotoclick.ui.trim_dialog import TrimDialog
+        from app.ui.trim_dialog import TrimDialog
         src = make_wav(TMP / "dlg.wav", seconds=8.0)
         pcm = sound_trim.load_pcm(src)
         d = TrimDialog(src, pcm, "Мяу", 5.0, volume=0.5)
@@ -411,11 +411,11 @@ class FirstRunLanguageTests(unittest.TestCase):
 
     def run_with(self, lc):
         cfg = tempfile.mkdtemp()
-        code = ("import os,sys; sys.path.insert(0, %r); import main as m; from kotoclick import i18n;"
-                "from kotoclick.settings import Settings;"
+        code = ("import os,sys; sys.path.insert(0, %r); import main as m; from app import i18n;"
+                "from app.settings import Settings;"
                 "app = m.create_app([]);"
-                "from kotoclick.ui.main_window import MainWindow;"
-                "from kotoclick.engine import Engine; from kotoclick.hotkeys import HotkeyListener;"
+                "from app.ui.main_window import MainWindow;"
+                "from app.engine import Engine; from app.hotkeys import HotkeyListener;"
                 "s = Settings.load();"
                 "w = MainWindow(s, Engine(), HotkeyListener(), library_dir=os.path.join(%r,'m'));"
                 "print('LANG=' + i18n.language()); print('TAB=' + w.windowTitle())"

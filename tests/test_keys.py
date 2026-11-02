@@ -10,10 +10,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ.setdefault("KOTOCLICK_CONFIG_DIR", tempfile.mkdtemp())
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from kotoclick import i18n  # noqa: E402
-from kotoclick.engine import Engine  # noqa: E402
-from kotoclick.hotkeys import pretty_key  # noqa: E402
-from kotoclick.macro import Macro, Step, release_dangling_keys  # noqa: E402
+from app import i18n  # noqa: E402
+from app.engine import Engine  # noqa: E402
+from app.hotkeys import pretty_key  # noqa: E402
+from app.macro import Macro, Step, release_dangling_keys  # noqa: E402
 from test_core import FakeMouse, K, wait_until  # noqa: E402
 
 

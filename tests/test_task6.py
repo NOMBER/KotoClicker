@@ -14,10 +14,10 @@ os.environ["KOTOCLICK_CONFIG_DIR"] = tempfile.mkdtemp()
 os.environ["KOTOCLICK_SOUND"] = "off"
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-import kotoclick  # noqa: E402
-from kotoclick import i18n, paths, promo  # noqa: E402
-from kotoclick.settings import Settings  # noqa: E402
-from kotoclick.typography import nbsp  # noqa: E402
+import app  # noqa: E402
+from app import i18n, paths, promo  # noqa: E402
+from app.settings import Settings  # noqa: E402
+from app.typography import nbsp  # noqa: E402
 
 NEW_URL = "https://t.me/DownGrabBot?start=KotoClick"
 
@@ -44,8 +44,8 @@ class NoOverrides:
 
 class NameTests(unittest.TestCase):
     def test_names(self):
-        self.assertEqual(kotoclick.APP_NAME, "KotoClick")
-        self.assertEqual(kotoclick.LEGACY_APP_NAME, "Kotoklik")
+        self.assertEqual(app.APP_NAME, "KotoClick")
+        self.assertEqual(app.LEGACY_APP_NAME, "Kotoklik")
 
     def test_titles(self):
         self.assertEqual(i18n.STRINGS["en"]["app_title"], "KotoClick")
@@ -146,9 +146,9 @@ class LinkTests(unittest.TestCase):
 
     def test_link_opens_only_on_click_with_full_url(self):
         from PySide6.QtCore import QUrl
-        from kotoclick.ui.cat import PromoToast
+        from app.ui.cat import PromoToast
         opened = []
-        with mock.patch("kotoclick.ui.cat.QDesktopServices.openUrl", side_effect=lambda u: opened.append(u)):
+        with mock.patch("app.ui.cat.QDesktopServices.openUrl", side_effect=lambda u: opened.append(u)):
             t = PromoToast(promo.PROMO_URL)
             t.set_text(nbsp(i18n.STRINGS["en"]["promo"].format(url=promo.PROMO_URL)))
             t.popup()

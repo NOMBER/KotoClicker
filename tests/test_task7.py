@@ -16,9 +16,9 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 from PySide6.QtWidgets import QApplication  # noqa: E402
 
-from kotoclick import engine as engine_mod, i18n  # noqa: E402
-from kotoclick.engine import Engine, PynputMouse  # noqa: E402
-from kotoclick.macro import FORMAT_VERSION, Macro, Step, release_dangling_buttons  # noqa: E402
+from app import engine as engine_mod, i18n  # noqa: E402
+from app.engine import Engine, PynputMouse  # noqa: E402
+from app.macro import FORMAT_VERSION, Macro, Step, release_dangling_buttons  # noqa: E402
 from test_core import K, wait_until  # noqa: E402
 from test_keys import FakeKeyboard  # noqa: E402
 
@@ -394,7 +394,7 @@ class MacroFormatTests(unittest.TestCase):
 
 class StepDialogTests(unittest.TestCase):
     def test_edit_scroll_and_hold(self):
-        from kotoclick.ui.step_dialog import StepDialog
+        from app.ui.step_dialog import StepDialog
         d = StepDialog(Step("scroll", 10, 20, delay_ms=30, dx=0, dy=-2), cursor_fn=lambda: (0, 0))
         self.assertTrue(d.dy.isEnabled())
         self.assertFalse(d.button.isEnabled())

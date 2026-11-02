@@ -23,7 +23,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen:configfile=" + _cfg)
 from PySide6.QtCore import QTimer  # noqa: E402
 
 import main as app_main  # noqa: E402
-from kotoclick.macro import Step  # noqa: E402
+from app.macro import Step  # noqa: E402
 
 out = sys.argv[1] if len(sys.argv) > 1 else "screenshot.png"
 tab = int(sys.argv[2]) if len(sys.argv) > 2 else 0
@@ -71,7 +71,7 @@ if state == "disco":
     feeder.start()
     win._refresh_texts()
 elif state.startswith("dialog"):
-    from kotoclick.ui.step_dialog import StepDialog
+    from app.ui.step_dialog import StepDialog
     kind = state.partition(":")[2] or "scroll"
     sample = {"scroll": Step("scroll", 900, 600, delay_ms=300, dy=-3),
               "mouse_down": Step("mouse_down", 640, 380, "left", 400),
