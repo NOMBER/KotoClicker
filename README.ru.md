@@ -6,9 +6,10 @@
 
 ## Скачать
 
-**[⬇ Скачать KotoClick.exe](https://github.com/NOMBER/KotoClick/releases/latest/download/KotoClick.exe)** — готовая программа для Windows, один файл, Python не нужен. Все версии — на странице [Releases](https://github.com/NOMBER/KotoClick/releases).
+**[⬇ Скачать KotoClick.exe](https://github.com/NOMBER/KotoClick/releases)** — готовая программа для Windows, один файл, Python не нужен.
 
-**Проверка файла.** Контрольная сумма SHA-256 указана в описании релиза. Открой PowerShell в папке со скачанным файлом и сравни:
+**Проверка файла.** Контрольная сумма SHA-256 указана в описании релиза.
+Открой PowerShell в папке со скачанным файлом и сравни:
 
 ```powershell
 Get-FileHash .\KotoClick.exe -Algorithm SHA256
@@ -112,12 +113,18 @@ tools/                  — вспомогательные скрипты (зв�
 
 ## Лицензия
 
-[ПЛЕЙСХОЛДЕР — выбери лицензию и добавь файл `LICENSE`]
+Этот проект распространяется по лицензии GPL v3.
+Что это означает для пользователей:
+- Авторство: необходимо сохранять указание авторства и уведомления о лицензии.
+- Свобода: код можно использовать, изменять и распространять бесплатно.
+- Копилефт: любые изменения и проекты, основанные на этом коде, также должны быть доступны по лицензии GPL v3.
 
 Шрифт Nunito в `assets/fonts/` распространяется по лицензии OFL, текст лицензии лежит рядом (`FONT_LICENSE.txt`).
 
 ## Контакты
 
 - Telegram-бот для скачивания видео: [@DownGrabBot](https://t.me/DownGrabBot?start=KotoClick)
+
+- [kotoclick.github.io](https://kotoclick.github.io)
 
 - [NomberProjects](https://NomberProjects.github.io)
