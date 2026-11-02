@@ -2,7 +2,7 @@
 
 **KotoClick** is an auto-clicker for Windows with a lazy orange cat that clicks for you, and a little mouse helper that records your actions into macros. The program works completely offline and is written entirely in Python by a neural network and the crazy enthusiasm of young independent developers.
 
-> Screenshots: ![ScreenShot](KotoClick\assets\KotoClick_Screenshot.jpg)
+> Screenshots: ![ScreenShot](KotoClick/assets/KotoClick_Screenshot.jpg)
 
 ## Download
 
